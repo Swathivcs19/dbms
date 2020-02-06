@@ -1,0 +1,338 @@
+
+Table PERSON1 created.
+
+Name    Null?    Type         
+------- -------- ------------ 
+DRIV_ID NOT NULL VARCHAR2(10) 
+NAME             VARCHAR2(30) 
+ADDR             VARCHAR2(30) 
+
+Table CAR1 created.
+
+Name   Null?    Type         
+------ -------- ------------ 
+REG_NO NOT NULL VARCHAR2(15) 
+MODEL           VARCHAR2(20) 
+YEAR            NUMBER(38)   
+
+Error starting at line : 15 in command -
+CREATE TABLE ACCIDENT(REPORT_NO VARCHAR(20),
+ACC_DATE DATE,
+LOCATION VARCHAR(20))
+Error report -
+ORA-00955: name is already used by an existing object
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+
+Error starting at line : 15 in command -
+CREATE TABLE ACCIDENT(REPORT_NO VARCHAR(20),
+ACC_DATE DATE,
+LOCATION VARCHAR(20)
+PRIMARY KEY(REPORT_NO))
+Error report -
+ORA-00907: missing right parenthesis
+00907. 00000 -  "missing right parenthesis"
+*Cause:    
+*Action:
+
+Error starting at line : 15 in command -
+CREATE TABLE ACCIDENT(REPORT_NO VARCHAR(20),
+ACC_DATE DATE,
+LOCATION VARCHAR(20),
+PRIMARY KEY(REPORT_NO))
+Error report -
+ORA-00955: name is already used by an existing object
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+
+Table ACCIDENT1 created.
+
+Name      Null?    Type         
+--------- -------- ------------ 
+REPORT_NO NOT NULL VARCHAR2(20) 
+ACC_DATE           DATE         
+LOCATION           VARCHAR2(20) 
+
+Error starting at line : 22 in command -
+CREATE TABLE OWNS1(DRIVE_ID VARCHAR(10),
+REG_NO VARCHAR(10),
+PRIMARY KEY(DRIVE_ID,REG_NO),
+FOREIGN KEY(DRIVE_ID)REFERENCESPERSON1(DRIVE_ID),
+FOREIGN KEY(REG_NO)REFERENCESCAR1(REG_NO)
+)
+Error report -
+ORA-00905: missing keyword
+00905. 00000 -  "missing keyword"
+*Cause:    
+*Action:
+
+Error starting at line : 22 in command -
+CREATE TABLE OWNS1(DRIVE_ID VARCHAR(10),
+REG_NO VARCHAR(10),
+PRIMARY KEY(DRIVE_ID,REG_NO),
+FOREIGN KEY(DRIVE_ID)REFERENCES PERSON1(DRIVE_ID),
+FOREIGN KEY(REG_NO)REFERENCES CAR1(REG_NO)
+)
+Error report -
+ORA-00904: "DRIVE_ID": invalid identifier
+00904. 00000 -  "%s: invalid identifier"
+*Cause:    
+*Action:
+
+Error starting at line : 22 in command -
+CREATE TABLE OWNS1(DRIVE_ID VARCHAR(10),
+REG_NO VARCHAR(10),
+PRIMARY KEY(DRIV_ID,REG_NO),
+FOREIGN KEY(DRIV_ID)REFERENCES PERSON1(DRIV_ID),
+FOREIGN KEY(REG_NO)REFERENCES CAR1(REG_NO)
+)
+Error report -
+ORA-00904: "DRIV_ID": invalid identifier
+00904. 00000 -  "%s: invalid identifier"
+*Cause:    
+*Action:
+
+Table OWNS1 created.
+
+Name    Null?    Type         
+------- -------- ------------ 
+DRIV_ID NOT NULL VARCHAR2(10) 
+REG_NO  NOT NULL VARCHAR2(10) 
+
+Error starting at line : 15 in command -
+CREATE TABLE ACCIDENT1(REPORT_NO VARCHAR(10),
+ACC_DATE DATE,
+LOCATION VARCHAR(20),
+PRIMARY KEY(REPORT_NO))
+Error report -
+ORA-00955: name is already used by an existing object
+00955. 00000 -  "name is already used by an existing object"
+*Cause:    
+*Action:
+Name    Null?    Type         
+------- -------- ------------ 
+DRIV_ID NOT NULL VARCHAR2(10) 
+NAME             VARCHAR2(30) 
+ADDR             VARCHAR2(30) 
+Name   Null?    Type         
+------ -------- ------------ 
+REG_NO NOT NULL VARCHAR2(15) 
+MODEL           VARCHAR2(20) 
+YEAR            NUMBER(38)   
+Name      Null?    Type         
+--------- -------- ------------ 
+REPORT_NO NOT NULL VARCHAR2(20) 
+ACC_DATE           DATE         
+LOCATION           VARCHAR2(20) 
+Name    Null?    Type         
+------- -------- ------------ 
+DRIV_ID NOT NULL VARCHAR2(10) 
+REG_NO  NOT NULL VARCHAR2(10) 
+
+Table PARTICAPATED1 created.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+Commit complete.
+
+
+Error starting at line : 63 in command -
+INSERT INTO ACCIDENT1 VALUES(12,'12-03-2000')
+Error at Command Line : 63 Column : 13
+Error report -
+SQL Error: ORA-00947: not enough values
+00947. 00000 -  "not enough values"
+*Cause:    
+*Action:
+
+Error starting at line : 63 in command -
+INSERT INTO ACCIDENT1 VALUES(12,'12-MAR-2000')
+Error at Command Line : 63 Column : 13
+Error report -
+SQL Error: ORA-00947: not enough values
+00947. 00000 -  "not enough values"
+*Cause:    
+*Action:
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+1 row inserted.
+
+
+Error starting at line : 66 in command -
+INSERT INTO ACCIDENT1 VALUES(15,'30-FEB-2010','MYSORE ROAD')
+Error report -
+ORA-01858: a non-numeric character was found where a numeric was expected
+
+
+1 row inserted.
+
+
+Commit complete.
+
+
+Substitution cancelled
+old:INSERT INTO OWNS1 VALUES('&DRIV_ID','&REG_NO')
+new:INSERT INTO OWNS1 VALUES('A01','KA23')
+
+1 row inserted.
+
+old:INSERT INTO OWNS1 VALUES('&DRIV_ID','&REG_NO')
+new:INSERT INTO OWNS1 VALUES('A02','KA34')
+
+1 row inserted.
+
+old:INSERT INTO OWNS1 VALUES('&DRIV_ID','&REG_NO')
+new:INSERT INTO OWNS1 VALUES('A03','KA56')
+
+1 row inserted.
+
+old:INSERT INTO OWNS1 VALUES('&DRIV_ID','&REG_NO')
+new:INSERT INTO OWNS1 VALUES('A04','KA67')
+
+1 row inserted.
+
+old:INSERT INTO OWNS1 VALUES('&DRIV_ID','&REG_NO')
+new:INSERT INTO OWNS1 VALUES('A05','KA89')
+
+1 row inserted.
+
+old:INSERT INTO PARTICIPATED1 VALUES('&DRIV_ID','&REG_NO','&REPORT_NO','&DAMAGE_AMT')
+new:INSERT INTO PARTICIPATED1 VALUES('A01','KA23','12','A02')
+
+Error starting at line : 77 in command -
+INSERT INTO PARTICIPATED1 VALUES('A01','KA23','12','A02')
+Error at Command Line : 77 Column : 13
+Error report -
+SQL Error: ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+old:INSERT INTO PARTICIPATED1 VALUES('&DRIV_ID','&REG_NO','&REPORT_NO','&DAMAGE_AMT')
+new:INSERT INTO PARTICIPATED1 VALUES('A02','KA34','13','34000')
+
+Error starting at line : 77 in command -
+INSERT INTO PARTICIPATED1 VALUES('A02','KA34','13','34000')
+Error at Command Line : 77 Column : 13
+Error report -
+SQL Error: ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+old:INSERT INTO PARTICIPATED1 VALUES('&DRIV_ID','&REG_NO','&REPORT_NO','&DAMAGE_AMT')
+new:INSERT INTO PARTICIPATED1 VALUES('AO3','KA56','14','3499')
+
+Error starting at line : 77 in command -
+INSERT INTO PARTICIPATED1 VALUES('AO3','KA56','14','3499')
+Error at Command Line : 77 Column : 13
+Error report -
+SQL Error: ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+old:INSERT INTO PARTICIPATED1 VALUES('&DRIV_ID','&REG_NO','&REPORT_NO','&DAMAGE_AMT')
+new:INSERT INTO PARTICIPATED1 VALUES('A04','KA67','15','3488')
+
+Error starting at line : 77 in command -
+INSERT INTO PARTICIPATED1 VALUES('A04','KA67','15','3488')
+Error at Command Line : 77 Column : 13
+Error report -
+SQL Error: ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+old:INSERT INTO PARTICIPATED1 VALUES('&DRIV_ID','&REG_NO','&REPORT_NO','&DAMAGE_AMT')
+new:INSERT INTO PARTICIPATED1 VALUES('A05','KA89','16','6734')
+
+Error starting at line : 77 in command -
+INSERT INTO PARTICIPATED1 VALUES('A05','KA89','16','6734')
+Error at Command Line : 77 Column : 13
+Error report -
+SQL Error: ORA-00942: table or view does not exist
+00942. 00000 -  "table or view does not exist"
+*Cause:    
+*Action:
+old:INSERT INTO PARTICAPATED1 VALUES('&DRIV_ID','&REG_NO','&REPORT_NO','&DAMAGE_AMT')
+new:INSERT INTO PARTICAPATED1 VALUES('A01','KA23','12','1200')
+
+1 row inserted.
+
+old:INSERT INTO PARTICAPATED1 VALUES('&DRIV_ID','&REG_NO','&REPORT_NO','&DAMAGE_AMT')
+new:INSERT INTO PARTICAPATED1 VALUES('A02','KA34','13','1300')
+
+1 row inserted.
+
+old:INSERT INTO PARTICAPATED1 VALUES('&DRIV_ID','&REG_NO','&REPORT_NO','&DAMAGE_AMT')
+new:INSERT INTO PARTICAPATED1 VALUES('A03','KA56','14','1500')
+
+1 row inserted.
+
+old:INSERT INTO PARTICAPATED1 VALUES('&DRIV_ID','&REG_NO','&REPORT_NO','&DAMAGE_AMT')
+new:INSERT INTO PARTICAPATED1 VALUES('A04','KA67','15','1600')
+
+Error starting at line : 77 in command -
+INSERT INTO PARTICAPATED1 VALUES('&DRIV_ID','&REG_NO','&REPORT_NO','&DAMAGE_AMT')
+Error report -
+ORA-02291: integrity constraint (SWATHI.SYS_C0011078) violated - parent key not found
+
+old:INSERT INTO PARTICAPATED1 VALUES('&DRIV_ID','&REG_NO','&REPORT_NO','&DAMAGE_AMT')
+new:INSERT INTO PARTICAPATED1 VALUES('A05','KA89','16','1700')
+
+1 row inserted.
+
+
+0 rows updated.
+
+
+1 row updated.
+
+
+1 row inserted.
+
+
+Commit complete.
+
+
+1 row updated.
+
+
+Error starting at line : 110 in command -
+INSERT INTO  ACCIDENT1 VALUES(17,'18-FEB-2018','DOMLUR')
+Error report -
+ORA-00001: unique constraint (SWATHI.SYS_C0011071) violated
+
