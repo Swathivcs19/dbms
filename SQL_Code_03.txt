@@ -1,0 +1,51 @@
+create table student
+(snum int,
+sname varchar(30),
+major varchar(30),
+lvl varchar(20),
+age int,
+primary key(snum));
+
+create table Suppliers
+(sid int,
+sname varchar(30),
+address  varchar(30),
+primary key(sid));
+
+create table parts
+(pid int,
+pname varchar(20),
+color varchar(20),
+primary key(pid));
+
+create table catalog(
+sid int,
+pid int,
+cost real,
+primary key(sid,pid),
+foreign key(sid)references Suppliers(sid),
+foreign key(pid)references parts(pid));
+
+insert into suppliers values(101,'Yaseen','BTM_Layout');
+insert into suppliers values(102,'Arbaz','BTM');
+insert into suppliers values(103,'Abhishek','Shanthinagara');
+insert into suppliers values(104,'Chirag','Jayanagara');
+insert into suppliers values(105,'Chiru','JP Nagar');
+
+select * from suppliers;
+
+insert into parts values(11,'Keybord','Black');
+insert into parts values(12,'Monitor','White');
+insert into parts values(13,'Mouse','red');
+insert into parts values(14,'Hardisk','Brown');
+insert into parts values(15,'CD_Rom','Black');
+
+select * from parts;
+
+insert into catalog values(101,11,350);
+insert into catalog values(102,12,4590);
+insert into catalog values(103,13,256);
+insert into catalog values(104,14,2430);
+insert into catalog values(105,15,1500);
+
+select * from catalog;
