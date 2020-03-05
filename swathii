@@ -1,0 +1,110 @@
+old:insert into mov_cast(&act_id,&mov_id,'&role')
+new:insert into mov_cast(13,23,'hero')
+
+Error starting at line : 50 in command -
+insert into mov_cast(13,23,'hero')
+Error at Command Line : 50 Column : 22
+Error report -
+SQL Error: ORA-00928: missing SELECT keyword
+00928. 00000 -  "missing SELECT keyword"
+*Cause:    
+*Action:
+old:insert into mov_cast values(&act_id,&mov_id,'&role')
+new:insert into mov_cast values(12,23,'hero')
+
+1 row inserted.
+
+old:insert into mov_cast values(&act_id,&mov_id,'&role')
+new:insert into mov_cast values(15,24,'comedian')
+
+1 row inserted.
+
+old:insert into mov_cast values(&act_id,&mov_id,'&role')
+new:insert into mov_cast values(14,21,'heroine')
+
+1 row inserted.
+
+old:insert into mov_cast values(&act_id,&mov_id,'&role')
+new:insert into mov_cast values(11,22,'side actor')
+
+1 row inserted.
+
+old:insert into mov_cast values(&act_id,&mov_id,'&role')
+new:insert into mov_cast values(13,25,'parent role')
+
+1 row inserted.
+
+old:insert into rating values(&mov_id,&rev_stars)
+new:insert into rating values(25,5)
+
+1 row inserted.
+
+old:insert into rating values(&mov_id,&rev_stars)
+new:insert into rating values(23,3)
+
+1 row inserted.
+
+old:insert into rating values(&mov_id,&rev_stars)
+new:insert into rating values(21,4)
+
+1 row inserted.
+
+old:insert into rating values(&mov_id,&rev_stars)
+new:insert into rating values(22,3)
+
+1 row inserted.
+
+old:insert into rating values(&mov_id,&rev_stars)
+new:insert into rating values(24,5)
+
+1 row inserted.
+
+
+Error starting at line : 60 in command -
+
+Error report -
+Unknown Command
+
+old:insert into movies values(&mov_id,'&mov_title',&mov_year,'&mov_lang',&dir_id)
+new:insert into movies values(26,'uturn',2000,'kannada',4)
+
+1 row inserted.
+
+old:insert into movies values(&mov_id,'&mov_title',&mov_year,'&mov_lang',&dir_id)
+new:insert into movies values(27,'sahoo',2005,'tlugu',3)
+
+1 row inserted.
+
+old:insert into mov_cast values(&act_id,&mov_id,'&role')
+new:insert into mov_cast values(12,27,'hero')
+
+1 row inserted.
+
+old:insert into mov_cast values(&act_id,&mov_id,'&role')
+new:insert into mov_cast values(15,26,'heroine')
+
+1 row inserted.
+
+
+Error starting at line : 67 in command -
+update rating r,movies m set rev_stars=5
+where dir_name='steven spielberg' and r.mov_id=m.mov_id
+Error at Command Line : 67 Column : 16
+Error report -
+SQL Error: ORA-00971: missing SET keyword
+00971. 00000 -  "missing SET keyword"
+*Cause:    
+*Action:
+
+Error starting at line : 67 in command -
+update rating r,movies m, set rev_stars=5
+where dir_name='steven spielberg' and r.mov_id=m.mov_id
+Error at Command Line : 67 Column : 16
+Error report -
+SQL Error: ORA-00971: missing SET keyword
+00971. 00000 -  "missing SET keyword"
+*Cause:    
+*Action:
+
+Commit complete.
+
